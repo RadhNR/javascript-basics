@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Errors</title>	
+	<style>
+		.red {
+			color:red;
+		}
+		.green {
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1>Heading</h1>
+	
+	<div id="demo">hi</div>
+	
+	<p class="para">Paragraph 111</p>
+	<p class="para">Paragraph 222</p>
+	
+	
+	<script>
+		var a = 12;
+		try {
+			var b = a.toUpperCase();
+			document.write(b);
+		} catch (err) {
+			document.write(err.message, err.name);
+		}
+		finally {
+			console.log("completed..")
+		}
+	</script>
+</body>
+</html>

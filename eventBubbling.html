@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Event Bubbling</title>
+</head>
+<body id="body">
+  <div id="parent">
+    <div id="child" onclick="event.stopPropagation()">
+		<div id="grandChild" >Click here</div>
+	</div>
+  </div>
+  
+  <script>
+    var parent = document.getElementById('parent');
+    <!-- Add click event on parent div -->
+      parent.addEventListener('click', function(){
+        console.log("Parent clicked");
+      });
+    var child = document.getElementById('child');
+    <!-- Add click event on child button -->
+      child.addEventListener('click', function(){
+        console.log("Child clicked");
+      });
+	  var grandChild = document.getElementById('grandChild');
+    <!-- Add click event on child button -->
+      grandChild.addEventListener('click', function(){
+        console.log("grandChild clicked");
+      });
+	  
+	  var body = document.getElementById('body');
+    <!-- Add click event on child button -->
+      body.addEventListener('click', function(){
+        console.log("body clicked");
+      });
+  </script>
+</body>
+</html>

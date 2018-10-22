@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Event Capturing</title>
+</head>
+<body id="body">
+  <div id="parent">
+    <div id="child" onclick="event.stopPropagation()">
+		<div id="grandChild">Click here</div>
+	</div>
+  </div>
+  
+  <script>
+    var parent = document.querySelector('#parent');
+	var child = document.querySelector('#child');
+	var grandChild = document.getElementById('grandChild');
+	
+		
+    parent.addEventListener('click', function(){
+      console.log("Parent clicked");
+    }, true);
+	
+    child.addEventListener('click', function(){
+      console.log("Child clicked");
+    }, true);
+	
+	
+    <!-- Add click event on child button -->
+      grandChild.addEventListener('click', function(){
+        console.log("grandChild clicked");
+      }, true);
+	
+  </script>
+</body>
+</html>
